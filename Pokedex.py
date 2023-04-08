@@ -13,10 +13,10 @@ class Pokedex():
 
     def get_gen(self, poke):
         first_game = poke['game_indices'][0]['version']['name']
-        
-        if first_game == 'red' or 'blue' or 'yellow':
+    
+        if first_game == 'red' or first_game == 'blue' or first_game == 'yellow':
             return 1
-        elif first_game == 'gold' or 'silver' or 'crystal':
+        elif first_game == 'gold' or first_game == 'silver' or first_game == 'crystal':
             return 2
         else:
             return 3
