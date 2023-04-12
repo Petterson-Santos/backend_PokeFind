@@ -49,5 +49,44 @@ class Pokedex():
         pkm = Pokemon(self.get_name(poke), self.get_gen(poke), str(types[0]), str(types[1]), self.get_height(poke), self.get_weight(poke))
         
         return pkm
+
+    def compare_name(self, name_input, name_random):
+        if name_input == name_random:
+            return True
+        return False
+
+    def compare_gen_or_type(self, var_input, var_random):
+        if var_input == var_random:
+            return '🟩 '+str(var_input)
+        return '🟥 '+str(var_input)
     
+    def compare_height(self, height_input, height_random):
+        if height_input == height_random:
+            return '🟩 '+str(height_input)+'m'
+        elif height_input > height_random:
+            return '🔺 '+str(height_input)+'m'
+        return '🔻 '+str(height_input)+'m'
+
+    def compare_weight(self, weight_input, weight_random):
+        if weight_input == weight_random:
+            return '🟩 '+str(weight_input)+'Kg'
+        elif weight_input > weight_random:
+            return '🔺 '+str(weight_input)+'Kg'
+        return '🔻 '+str(weight_input)+'Kg'
+
+    def compare_pokemon(self, pokemon_input, pokemon_random):
+        message = ''
+
+        if self.compare_name(pokemon_input.name, pokemon_random.name):
+            message = 'Acertou!\n'+pokemon_input.get_pokemon_info()
+        else:
+            message = '( '+'🟥 '+pokemon_input.name+'\t'
+            message += self.compare_gen_or_type(pokemon_input.generation, pokemon_random.generation)+'\t'
+            message += self.compare_gen_or_type(pokemon_input.type1, pokemon_random.type1)+'\t'
+            message += self.compare_gen_or_type(pokemon_input.type2, pokemon_random.type2)+'\t'
+            message += self.compare_height(pokemon_input.height, pokemon_random.height)+'\t'
+            message += self.compare_weight(pokemon_input.weight, pokemon_random.weight)
+            message += ' )'
+
+        return message
     

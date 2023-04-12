@@ -16,4 +16,11 @@ class Pokemon():
               str(self.height)+'m'+'\t'+
               str(self.weight)+'Kg'+' )'
               )
-        
+
+    def get_pokemon_info(self):
+        return '( '+'🟩 '+str(self.name)+'\t'+'🟩 '+str(self.generation)+'\t'+'🟩 '+str(self.type1)+'\t'+'🟩 '+str(self.type2)+'\t'+'🟩 '+str(self.height)+'m'+'\t'+'🟩 '+str(self.weight)+'Kg'+' )'
+              
+              
+              
+              
+              
